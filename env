@@ -1,0 +1,8 @@
+DATABASE_URL=sqlite:///db.sqlite3
+EMAIL_PASSWORD=qwertyuiop[]\QWERTYUIOP{}|
+FACEBOOK_KEY=655398881923754
+FACEBOOK_SECRET=ead2094f0c19c39c771db85293f01339
+REDIS_URL=redis://localhost:6379
+SECRET_KEY=+nawj-y+^0k*3n%03i#%1qfdu=yf1d*e!y-s*i5pojd)h54l-%
+
+
