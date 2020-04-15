@@ -6,19 +6,20 @@ from django.dispatch import receiver
 
 
 class Subject(models.Model):
-    subject_name = models.TextField(max_length=200, blank=True)
-    subject_keep = models.TextField(max_length=200, blank=True)
+    name_subject = models.TextField(max_length=200, blank=True)
+    subject_keyword = models.TextField(max_length=200, blank=True)
     def __str__(self):
-        return self.subject_name
+        return self.name_subject
 
 
-class request_class(models.Model):
+class RequestSend(models.Model):
     request_list = models.TextField(max_length=200,blank=True)
     request_message = models.TextField(max_length=600,blank=True)
     whorecive = models.TextField(max_length=200,blank=True)
     def __str__(self):
         return self.request_list
-class match_class(models.Model):
+
+class MatchedName(models.Model):
     match = models.TextField(max_length=200,blank=True)
     youself = models.TextField(max_length=200,blank=True)
     def __str__(self):
@@ -34,8 +35,8 @@ class Userinfo(models.Model):
     bio = models.TextField(blank=True)
     fb_link = models.TextField(null=True)
     good_subject = models.ManyToManyField(Subject, related_name='Userinfos',blank=True)
-    request = models.ManyToManyField(request_class,blank=True)
-    match = models.ManyToManyField(match_class,blank=True)
+    request = models.ManyToManyField(RequestSend,blank=True)
+    match = models.ManyToManyField(MatchedName,blank=True)
     match_request = models.IntegerField(default=0)
     massage_list = models.IntegerField(default=0)
 

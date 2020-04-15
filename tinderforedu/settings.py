@@ -18,7 +18,8 @@ import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # load environment variables from .env
-dotenv_file = os.path.join(BASE_DIR, ".env")
+
+dotenv_file = os.path.join(BASE_DIR, "env")
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
 
@@ -27,7 +28,7 @@ if os.path.isfile(dotenv_file):
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = '+nawj-y+^0k*3n%03i#%1qfdu=yf1d*e!y-s*i5pojd)h54l-%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -93,14 +94,10 @@ ASGI_APPLICATION = 'tinderforedu.routing.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
 DATABASES = {}
-DATABASES['default'] = dj_database_url.config()
+DATABASES['default'] = dj_database_url.config
 
-if not os.path.isfile(dotenv_file):
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    SECURE_SSL_REDIRECT = True
-    SOCIAL_AUTH_POSTGRES_JSONFIELD = True
+
 
 
 # Password validation
@@ -121,14 +118,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CELERY_BROKER_URL = os.environ['REDIS_URL']
-CELERY_RESULT_BACKEND = os.environ['REDIS_URL']
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [os.environ['REDIS_URL']],
+            "hosts": 'redis://localhost:6379',
         },
     },
 }
@@ -136,7 +133,7 @@ CHANNEL_LAYERS = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": [os.environ['REDIS_URL']],
+        "LOCATION": 'redis://localhost:6379',
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient"
         }
@@ -150,8 +147,8 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-SOCIAL_AUTH_FACEBOOK_KEY = os.environ['FACEBOOK_KEY']
-SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['FACEBOOK_SECRET']
+SOCIAL_AUTH_FACEBOOK_KEY = '655398881923754'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'ead2094f0c19c39c771db85293f01339'
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_link', 'user_gender', 'user_birthday']
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
   'fields': 'id, name, email, picture.type(large), gender, birthday, link'
@@ -216,10 +213,12 @@ DEFAULT_FROM_EMAIL = 'Match and learn <admin@matchandlearn.social>'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_HOST_USER = 'admin@matchandlearn.social'
-EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASSWORD']
+EMAIL_HOST_PASSWORD = 'qwertyuiop[]\QWERTYUIOP{}|'
 EMAIL_PORT = 587
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+
 del DATABASES['default']['OPTIONS']['sslmode']
 DATABASES['default']['CONN_MAX_AGE'] = 0

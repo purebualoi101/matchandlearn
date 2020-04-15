@@ -17,6 +17,8 @@ from django import db
 from django.db import close_old_connections
 # Create your views here.
 
+
+# this function renders home page.
 @login_required
 def home(request):
     return render(request, 'tinder/home.html')
@@ -24,10 +26,12 @@ def home(request):
 def test_redirect(request):
     return HttpResponseRedirect("/")
 
+# function for signup.
 def signup(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
+            # collect user information.
             user = form.save(commit=False)
             user.is_active = False
             user.save()
@@ -42,6 +46,7 @@ def signup(request):
             Profilepic.objects.create(user=newuser,images='default.png')
             newuser.save()
             user.save()
+            # send verify link to E-mail user.
             current_site = get_current_site(request)
             mail_subject = 'Please verify your email address.'
             message = render_to_string('tinder/acc_active_email.html', {
@@ -59,6 +64,7 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'tinder/signup.html', {'form': form})
 
+# confirm E-mail.
 def activate(request, uidb64, token, backend='django.contrib.auth.backends.ModelBackend'):
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
@@ -75,20 +81,26 @@ def activate(request, uidb64, token, backend='django.contrib.auth.backends.Model
     else:
         return HttpResponse('''Activation link is invalid! <META HTTP-EQUIV="Refresh" CONTENT="5;URL=/login">''')
 
+# function for see user profile.
 def your_subject_page(request,user_id):
     User = Userinfo.objects.get(name=request.user.username)
     comments = Comment.objects.filter(post=request.user.id)
     pic = Profilepic.objects.get(user=User)
+    # add expert subject.
     if request.POST.get('subject_good'):
-        subject = Subject.objects.create(subject_name=request.POST['subject_good'],subject_keep=stringforsearch(request.POST['subject_good']))
+        subject = Subject.objects.create(name_subject=request.POST['subject_good'],subject_keyword=stringforsearch(request.POST['subject_good']))
         U1=Userinfo.objects.get(name=request.user.username)
         U1.good_subject.add(subject)
         U1.save()
         return render(request, 'tinder/your_subject.html', {'comments': comments,'pic':pic,'name': Userinfo.objects.get(id=user_id),'subject': Userinfo.objects.get(name=request.user.username).good_subject.all()})
     return render(request,'tinder/your_subject.html', {'comments': comments,'pic':pic,'name': Userinfo.objects.get(id=user_id),'subject': Userinfo.objects.get(name=request.user.username).good_subject.all(),'test':Userinfo.objects.get(name=request.user.username).match.all()})
+
+# this function used when user login.
 def successlogin(request):
     if request.POST.get('login'):
         return render(request, 'tinder/home.html', {'name': request.user.username })
+
+# function for see another profile.
 def another_profile(request,user_id):
     pic = Profilepic.objects.get(user=user_id)
     comments = Comment.objects.filter(post=request.user.id)
@@ -98,24 +110,31 @@ def another_profile(request,user_id):
     Url_list = [Username.name,match_guy.name]
     Url_list_sort=sorted(Url_list)
     Url_chat =Url_list_sort[0]+"_"+Url_list_sort[1]
+    # add a comment and can comment once.
     if request.POST.get('comment_input'):
         comment_text = Comment.objects.create(comment=request.POST['comment_input'])
+        # create new comment if user never comment to this profile.
         if not Comment.objects.filter(whocomment = Username, commentto= match_guy):
             a1 = Comment.objects.create(comment_value = comment_text, whocomment = Username, commentto= match_guy)
             a1.save()
+        # edit comment if user ever comment to this profile.
         else:
             a1 = Comment.objects.get(whocomment = Username, commentto= match_guy)
             a1.comment_value = comment_text
             a1.save()
+    # add a score, can add it once and can give a score of one to five.
     if request.POST.get('star_input'):
         star_score = Comment.objects.create(comment=request.POST['star_input'])
+        # create new score if user never give it to this profile.
         if not Comment.objects.filter(whocomment = Username, commentto= match_guy):
             a1 = Comment.objects.create(comment_value = star_score, whocomment = Username, commentto= match_guy)
             a1.save()
+        # edit score if user ever give it to this profile.
         else:
             a1 = Comment.objects.get(whocomment = Username, commentto= match_guy)
             a1.comment_value = star_score
             a1.save()
+    # if user is student or tutor of this profile. he can chat.
     if match_guy.request.filter(request_list=Username.name).exists():
         return render(request, 'tinder/profile.html', {'comments': comments,'pic':pic,'name': Userinfo.objects.get(name=request.user.username),
                                                        'subject': Userinfo.objects.get(id=user_id).good_subject.all(),
@@ -124,7 +143,7 @@ def another_profile(request,user_id):
                                                        'profile': Userinfo.objects.get(id=user_id),'check':1,"chat_room_name":Url_chat})
     return render(request,'tinder/profile.html',{'comments': comments,'pic':pic,'profile': modelget,'subject':modelget.good_subject.all(),'name': Userinfo.objects.get(name =request.user.username),"chat_room_name":Url_chat})
 
-
+# if user sign in with Facebook. he have to add his school.
 def adddata(request):
     if request.method == "POST":
         form = AdditionalForm(request.POST)
@@ -139,60 +158,76 @@ def adddata(request):
         form = AdditionalForm()
     return render(request, 'tinder/adddata.html', {'form': form})
 
+# function for show home page.
 def home_page(request):
-    """search here"""
     select_sub = []
     sendPOST = 0
+    # check that user has loged in.
     if (Userinfo.objects.filter(name=request.user.username).count() == 0):
         return HttpResponseRedirect('/login')
+    # check that dose user have school data ?
     if Userinfo.objects.get(name=request.user.username).school == '':
         return HttpResponseRedirect('/adddata')
+    # subject finding.
     if request.POST.get('subject_find'):
         sendPOST = 1
         infoma = {}
         what_sub = stringforsearch(request.POST['subject_find'])
+        # user uses subject name to find tutor.
         if request.POST['filter'] != "" and request.POST['location_school'] !=" ":
-            select_sub = Userinfo.objects.filter(good_subject__subject_keep=what_sub,schoolkey=stringforschool(request.POST['location_school']),bio=request.POST['filter'])
+            select_sub = Userinfo.objects.filter(good_subject__subject_keyword=what_sub,schoolkey=stringforschool(request.POST['location_school']),bio=request.POST['filter'])
             for key in select_sub:
                 infoma[key] = Profilepic.objects.get(user=key)
+        # user uses gender to find tutor.
         elif request.POST['filter'] != "":
-            select_sub = Userinfo.objects.filter(good_subject__subject_keep=what_sub,bio=request.POST['filter'])
+            select_sub = Userinfo.objects.filter(good_subject__subject_keyword=what_sub,bio=request.POST['filter'])
             for key in select_sub:
                 infoma[key] = Profilepic.objects.get(user=key)
+        # user uses school name to find tutor.
         elif request.POST['location_school'] != "":
-            select_sub = Userinfo.objects.filter(good_subject__subject_keep=what_sub,
+            select_sub = Userinfo.objects.filter(good_subject__subject_keyword=what_sub,
                                                      schoolkey=stringforschool(request.POST['location_school']))
             for key in select_sub:
                 infoma[key] = Profilepic.objects.get(user=key)
+        # user use school name and gender to find tutor.
         else:
-            select_sub = Userinfo.objects.filter(good_subject__subject_keep=what_sub)
+            select_sub = Userinfo.objects.filter(good_subject__subject_keyword=what_sub)
             for key in select_sub:
                 infoma[key] = Profilepic.objects.get(user=key)
         return render(request, 'tinder/home.html', {'infoma':infoma,'name':Userinfo.objects.get(name=request.user.username),"search_result": select_sub, "search_size": len(select_sub),'sendPOST' : sendPOST, "what_sub": request.POST['subject_find']})
     close_old_connections()
     db.connection.close()
     return render(request,'tinder/home.html',{ 'name':Userinfo.objects.get(name=request.user.username), "search_size": len(select_sub),'sendPOST':sendPOST,'test':Userinfo.objects.get(name=request.user.username).request.all()})
+
+# function for delete expert subject.
 def select_delete(request,user_id):
     User1 = Userinfo.objects.get(id=user_id)
     modelget = get_object_or_404(Userinfo, id=user_id)
     num = request.POST.getlist("subject_list")
+    # user press remove button but he has no selected subject.
     if len(num) == 0:
         pass
+    # user select subject to remove it.
     else :
         for i in num:
             select = modelget.good_subject.get(pk=i)
             select.delete()
 
     return HttpResponseRedirect(reverse('tinder:your_subject', args=(User1.id,)))
+
+# student request page.
 def match_request(request,user_id):
     match_list_id  = Userinfo.objects.get(name=request.user.username).request.all()
     list_match = []
     usernaem=Userinfo.objects.get(name=request.user.username)
-    usernaem.read()
+    usernaem.read()   # read function will make notification is 0 .
     usernaem.save()
+    # show list of people who send request to user.
     for i in match_list_id:
         list_match.append(Userinfo.objects.get(name=i.request_list))
     return render(request,'tinder/match_request.html',{'name':Userinfo.objects.get(name=request.user.username),'match_request':Userinfo.objects.get(name=request.user.username).request.all(),'list_match':list_match})
+
+# this function for send request.
 def match(request,user_id):
     Username = Userinfo.objects.get(name=request.user.username)
     pic = Profilepic.objects.get(user=user_id)
@@ -203,6 +238,7 @@ def match(request,user_id):
     Url_chat = Url_list_sort[0] + "_"+Url_list_sort[1]
     already_match = 0
     if request.method == "POST":
+        # they are already paired.
         if match_guy.request.filter(request_list=Username.name,whorecive=match_guy.name) or Username.request.filter(request_list=match_guy.name,whorecive=Username.name) :
             already_match=1
             return render(request, 'tinder/profile.html',
@@ -211,12 +247,15 @@ def match(request,user_id):
                            'subject': Userinfo.objects.get(id=user_id).good_subject.all(),
                            'test': Userinfo.objects.get(name=request.user.username).match.all(), 'check': 1,
                            'profile': Userinfo.objects.get(id=user_id), 'chat_room_name': Url_chat})
+        # send request.
         else:
-            user_name = request_class.objects.create(request_list=Username.name,request_message=request.POST['text_request'],whorecive=match_guy.name)
+            user_name = RequestSend.objects.create(request_list=Username.name,request_message=request.POST['text_request'],whorecive=match_guy.name)
             match_guy.request.add(user_name)
-            Userinfo.objects.get(id=user_id).notify()
+            Userinfo.objects.get(id=user_id).notify()     # notify function will +1 student request notification.
             Userinfo.objects.get(id=user_id).save()
             return render(request,'tinder/profile.html', {'already_match':already_match,'comments': comments,'pic': pic,'name': Userinfo.objects.get(name=request.user.username),'subject': Userinfo.objects.get(id=user_id).good_subject.all(),'test':Userinfo.objects.get(name=request.user.username).match.all(),'check':1,'profile':Userinfo.objects.get(id=user_id),'chat_room_name':Url_chat})
+
+# this function for cancel send request.
 def Unmatched(request,user_id):
     Username = Userinfo.objects.get(name=request.user.username)
     pic = Profilepic.objects.get(user=user_id)
@@ -225,12 +264,13 @@ def Unmatched(request,user_id):
     Url_list = [Username.name, match_guy.name]
     Url_list_sort = sorted(Url_list)
     Url_chat = Url_list_sort[0] + "_"+Url_list_sort[1]
+    # cancel sent request
     if request.POST.get('Unmatched'):
         Username = Userinfo.objects.get(name=request.user.username)
         match_guy = Userinfo.objects.get(id=user_id)
         remove_match = match_guy.request.get(request_list=Username.name,whorecive=match_guy.name)
         match_guy.request.remove(remove_match)
-        Userinfo.objects.get(id=user_id).denotify()
+        Userinfo.objects.get(id=user_id).denotify()     # denotify function will -1 student request notification.
         Userinfo.objects.get(id=user_id).save()
         return render(request, 'tinder/profile.html', {'comments': comments,'pic': pic,'name': Userinfo.objects.get(name=request.user.username),
                                                        'subject': Userinfo.objects.get(id=user_id).good_subject.all(),
@@ -241,6 +281,8 @@ def Unmatched(request,user_id):
                                                    'subject': Userinfo.objects.get(id=user_id).good_subject.all(),
                                                    'test': Userinfo.objects.get(name=request.user.username).match.all(),
                                                     'profile': Userinfo.objects.get(id=user_id),'chat_room_name':Url_chat})
+
+# this function for accept and decline request.
 def profile_accept(request,user_id):
     Username = Userinfo.objects.get(name=request.user.username)
     pic = Profilepic.objects.get(user=user_id)
@@ -249,16 +291,18 @@ def profile_accept(request,user_id):
     Url_list_sort = sorted(Url_list)
     comments = Comment.objects.filter(post=user_id)
     chat_room_name = Url_list_sort[0] + "_"+Url_list_sort[1]
+    # accept student request.
     if request.POST.get('accept'):
         Username = Userinfo.objects.get(name=request.user.username)
         match_guy = Userinfo.objects.get(id=user_id)
-        match_obj = match_class.objects.create(match=match_guy.name,youself=Username.name)
+        match_obj = MatchedName.objects.create(match=match_guy.name,youself=Username.name)
         Username.match.add(match_obj)
         request_obj = Username.request.get(request_list=match_guy.name,whorecive=Username.name)
         Username.request.remove(request_obj)
-        match_obj2 = match_class.objects.create(match=Username.name,youself=match_guy.name)
+        match_obj2 = MatchedName.objects.create(match=Username.name,youself=match_guy.name)
         match_guy.match.add(match_obj2)
         return HttpResponseRedirect(reverse('tinder:match_request', args=(Username.id,)))
+    # decline student request.
     if request.POST.get('decline'):
         Username = Userinfo.objects.get(name=request.user.username)
         match_guy = Userinfo.objects.get(id=user_id)
@@ -266,6 +310,8 @@ def profile_accept(request,user_id):
         Username.request.remove(request_obj)
         return HttpResponseRedirect(reverse('tinder:match_request', args=(Username.id,)))
     return render(request,'tinder/profile_accept.html',{'comments':comments,'pic':pic,'name': Userinfo.objects.get(name=request.user.username),'chat_room_name':chat_room_name,'name':Userinfo.objects.get(name=request.user.username),'profile': Userinfo.objects.get(id=user_id),'subject': Userinfo.objects.get(id=user_id).good_subject.all(),'request': Username.request.get(request_list=match_guy.name)})
+
+# this function for show student and tutor list.
 def students_list(request,user_id):
     match_list_id = Userinfo.objects.get(name=request.user.username).match.all()
     list_match = {}
@@ -276,6 +322,8 @@ def students_list(request,user_id):
         value = list_sort[0]+"_"+list_sort[1]
         list_match[key]=value
     return render(request,'tinder/students_list.html',{"name":Userinfo.objects.get(name=request.user.username),'tutor_list':Userinfo.objects.get(id=user_id).match.all(),'list_match':list_match})
+
+# see matched profile.
 def watch_profile(request,user_id):
     match_guy = Userinfo.objects.get(id=user_id)
     post = get_object_or_404(Userinfo, name=match_guy.name)
@@ -296,6 +344,8 @@ def watch_profile(request,user_id):
 
     else:
         comment_form = CommentForm()
+
+    # cancel being student or tutor.
     if request.POST.get('unmatch'):
         Username = Userinfo.objects.get(name=request.user.username)
         match_guy = Userinfo.objects.get(id=user_id)
@@ -306,6 +356,7 @@ def watch_profile(request,user_id):
         return HttpResponseRedirect(reverse('tinder:students_list', args=(Username.id,)))
     return render(request,'tinder/watch_profile.html',{'pic':pic,'name':Userinfo.objects.get(name=request.user.username),'profile':Userinfo.objects.get(id=user_id),'post': post, 'comments': comments, 'new_comment': new_comment, 'comment_form': comment_form})
 
+# this function for edit profile.
 def edit_profile(request,user_id):
     User = Userinfo.objects.get(name=request.user.username)
     Pic = Profilepic.objects.get(user= User)
@@ -321,10 +372,14 @@ def edit_profile(request,user_id):
         form = Editprofileform(instance=User)
         formpic = profilepicture(instance=Pic)
     return render(request,'tinder/edit_profile.html',{"pic":Pic,'form':form,'formpic':formpic})
+
+# this function for make searching easy
 def stringforsearch(keyword):
     keyword = keyword.lower()
     keyword = keyword.replace(' ', '')
     return keyword
+
+# this function for make searching easy
 def stringforschool(keyword):
     keyword = keyword.upper()
     keyword = keyword.replace(' ','')
