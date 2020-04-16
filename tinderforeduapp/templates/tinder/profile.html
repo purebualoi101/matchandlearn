@@ -82,8 +82,8 @@ bg{
 </head>
 <ul>
   <li><a href="/">Home</a></li>
-  <li><a name = "Students and Tutor list" href="{% url 'tinder:students_list' name.id%}">Students and Tutor list</a></li>
-    <li ><a name = "Match request" href="{% url 'tinder:match_request' name.id %}" {% if name.match_request > 0 %}class="notification"{% endif %}><span>Student request</span>{% if name.match_request > 0 %}<span name= "value_notificate" class="badge">{{ name.match_request }}</span>{% endif %}</a></li>
+  <li><a name = "Students and Tutor list" href="{% url 'tinder:student_tutor_list' name.id%}">Students and Tutor list</a></li>
+    <li ><a name = "Match request" href="{% url 'tinder:student_request' name.id %}" {% if name.match_request > 0 %}class="notification"{% endif %}><span>Student request</span>{% if name.match_request > 0 %}<span name= "value_notificate" class="badge">{{ name.match_request }}</span>{% endif %}</a></li>
     <li><a name = "About us" href="{% url 'tinder:aboutus' %}">About</a></li>
     <li><a name = "Chat" href="">Chat</a></li>
     <li><a name = "Privacy Policy" href="{% url 'tinder:privacy' %}">Privacy Policy</a></li>
@@ -143,12 +143,12 @@ bg{
                     <p>you was send the request to this user or user was send the request to you</p>
                 {% else %}
                     {% if check %}
-                    <form method="post" action="{% url 'tinder:unmatched' profile.id %}">
+                    <form method="post" action="{% url 'tinder:cancel_send_request' profile.id %}">
                         {% csrf_token %}
-                        <button class="btn btn-primary"  name="Unmatched" value="Unmatched" >Unmatched</button>
+                        <button class="btn btn-primary"  name="cancel_send_request" value="cancel_send_request" >cancel_send_request</button>
                     </form>
                     {% else %}
-                    <form method="post" action="{% url 'tinder:match' profile.id %}">
+                    <form method="post" action="{% url 'tinder:send_request' profile.id %}">
                         {% csrf_token %}
                         <label for="text_request">Tell something about yourself</label>
                         <input class="form-control" id ="text_request" name="text_request" type="text" row="4" cols="100" ><p></p>

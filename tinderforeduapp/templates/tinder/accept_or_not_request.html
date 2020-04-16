@@ -82,8 +82,8 @@ bg{
 </head>
 <ul>
   <li><a href="/">Home</a></li>
-  <li><a name = "Students and Tutor list" href="{% url 'tinder:students_list' name.id%}">Students and Tutor list</a></li>
-    <li ><a name = "Match request" href="{% url 'tinder:match_request' name.id %}" {% if name.match_request > 0 %}class="notification"{% endif %}><span>Student request</span>{% if name.match_request > 0 %}<span name= "value_notificate" class="badge">{{ name.match_request }}</span>{% endif %}</a></li>
+  <li><a name = "Students and Tutor list" href="{% url 'tinder:student_tutor_list' name.id%}">Students and Tutor list</a></li>
+    <li ><a name = "Match request" href="{% url 'tinder:student_request' name.id %}" {% if name.match_request > 0 %}class="notification"{% endif %}><span>Student request</span>{% if name.match_request > 0 %}<span name= "value_notificate" class="badge">{{ name.match_request }}</span>{% endif %}</a></li>
     <li><a name = "About us" href="{% url 'tinder:aboutus' %}">About</a></li>
     <li><a name = "Chat" href="">Chat</a></li>
     <li><a name = "Privacy Policy" href="{% url 'tinder:privacy' %}">Privacy Policy</a></li>
@@ -137,7 +137,7 @@ bg{
         <div class="row">
             <div class="col-md-6">
                 <div class="expertise-item">
-                    <form action="{% url 'tinder:profile_accept' profile.id %}" method="post">
+                    <form action="{% url 'tinder:accept_or_not_request' profile.id %}" method="post">
                         {% csrf_token %}
                         <button class="btn btn-primary" name="accept" value="accept" >accept</button>
                         <button class="btn btn-primary" name="decline" value="decline" >decline</button>
