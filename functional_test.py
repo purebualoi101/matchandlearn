@@ -146,13 +146,13 @@ class signUp(unittest.TestCase):
         self.browser.quit()
 
     def check_for_row_in_list_table(self, row_text):
-        table = self.browser.find_element_by_id('good_subject_table')
+        table = self.browser.find_element_by_id('expert_subject_table')
         rows = table.find_elements_by_tag_name('tr')
         self.assertIn(row_text, [row.text for row in rows])
 
 
 
-    def test_can_add_and_remove_good_subject(self):
+    def test_can_add_and_remove_expert_subject(self):
         # Pure wants to add his good subject so he clicks good subject link
         self.browser.get('http://127.0.0.1:8000/66/your_subject/')
 
@@ -217,7 +217,7 @@ class signUp(unittest.TestCase):
 
         # but he is not good at Physic.
         # he selects Physic checkbox to remove it
-        table = self.browser.find_element_by_id('good_subject_table')
+        table = self.browser.find_element_by_id('expert_subject_table')
         checkbox = table.find_element_by_id('name_subject:2')
         checkbox.click()
         remove_select = self.browser.find_element_by_id("remove_button_id")

@@ -92,7 +92,7 @@ bg{
     <li style="float:right"><a href="/{{ name.id }}/your_subject">Profile : {{ user.first_name }}</a></li>
 </ul>
 <head>
-     <table id="good_subject_table">
+     <table id="expert_subject_table">
     <form action="{% url 'tinder:match_request' name.id %}" method="post">
     {% for list_match in list_match %}
         <div class="myDiv">

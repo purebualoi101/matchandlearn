@@ -138,7 +138,7 @@ bg{
         <div class="row">
             <div class="col-md-6">
                 <div class="expertise-item">
-                    <table id="good_subject_table">
+                    <table id="expert_subject_table">
     <form action="{% url 'tinder:select_delete' name.id %}" method="post">
     {% for name_subject in subject.all %}
         <tr><td><input type="checkbox" name="subject_list" id="name_subject:{{ forloop.counter }}" value="{{ name_subject.id }}"><label for="name_subject{{ forloop.counter }}">{{ forloop.counter }}: {{ name_subject }}</label></td></tr><p></p>
