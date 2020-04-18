@@ -96,7 +96,7 @@ bg{
     <form action="{% url 'tinder:student_request' name.id %}" method="post">
     {% for list_match in list_match %}
         <div class="myDiv">
-        <div class="subDiv" onclick='location.href="/{{ list_match.id }}/accept_or_not_request"'><h1>{{ list_match.fullname }} {{ list_match.lastname }}</h1><p>Gender : {{ list_match.bio }}</p><p> age: {{ list_match.age  }}</p></div></td>
+        <div class="subDiv" onclick='location.href="/{{ list_match.id }}/accept_or_not_request"'><h1>{{ list_match.first_name }} {{ list_match.last_name }}</h1><p>Gender : {{ list_match.gender }}</p><p> age: {{ list_match.age  }}</p></div></td>
         </div>
     {% endfor %}
 

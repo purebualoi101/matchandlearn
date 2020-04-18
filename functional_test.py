@@ -218,7 +218,7 @@ class signUp(unittest.TestCase):
         # but he is not good at Physic.
         # he selects Physic checkbox to remove it
         table = self.browser.find_element_by_id('expert_subject_table')
-        checkbox = table.find_element_by_id('name_subject:2')
+        checkbox = table.find_element_by_id('subject_name:2')
         checkbox.click()
         remove_select = self.browser.find_element_by_id("remove_button_id")
         remove_select.send_keys(Keys.ENTER)

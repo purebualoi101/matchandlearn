@@ -107,11 +107,11 @@ bg{
             <img src="{{ pic.images.url }}" class="img-responsive" alt=""/>
         </div>
         <div class="content">
-            <h1>{{ name.fullname }} {{ name.lastname }}</h1>
+            <h1>{{ name.first_name }} {{ name.last_name }}</h1>
             <div class="about-text">
                 <p id="age_id">age: {{ name.age }}</p>
                 <p id="school_id">school: {{name.school }}</p>
-                <p id ="bio">gender: {{ name.bio }}</p>
+                <p id ="gender">gender: {{ name.gender }}</p>
             </div>
             <form action="{% url 'tinder:edit_profile' name.id %}">
             <input class="btn btn-primary" type="submit" value="Edit profile" />
@@ -140,8 +140,8 @@ bg{
                 <div class="expertise-item">
                     <table id="expert_subject_table">
     <form action="{% url 'tinder:select_delete' name.id %}" method="post">
-    {% for name_subject in subject.all %}
-        <tr><td><input type="checkbox" name="subject_list" id="name_subject:{{ forloop.counter }}" value="{{ name_subject.id }}"><label for="name_subject{{ forloop.counter }}">{{ forloop.counter }}: {{ name_subject }}</label></td></tr><p></p>
+    {% for subject_name in subject.all %}
+        <tr><td><input type="checkbox" name="subject_list" id="subject_name:{{ forloop.counter }}" value="{{ subject_name.id }}"><label for="subject_name{{ forloop.counter }}">{{ forloop.counter }}: {{ subject_name }}</label></td></tr><p></p>
     {% endfor %}
         <input class="btn btn-primary" id = "remove_button_id" name="remove_button" type="submit" value = "remove">
          {% csrf_token %}

@@ -25,16 +25,16 @@ def user_profile_db(backend, user, response, *args, **kwargs):
             user = Userinfo.objects.create(name=(response.get('name')).split(" ")[0] + (response.get('name')).split(" ")[1],
                                     school='',
                                     age=age,
-                                    fullname=(response.get('name')).split(" ")[0],
-                                    lastname=(response.get('name')).split(" ")[1],
-                                    bio=gender, fb_link=response.get('link'))
+                                    first_name=(response.get('name')).split(" ")[0],
+                                    last_name=(response.get('name')).split(" ")[1],
+                                    gender=gender, fb_link=response.get('link'))
         else:
             user = Userinfo.objects.create(name=(response.get('email')).split("@")[0],
                                 school='',
                                 age=age,
-                                fullname=(response.get('name')).split(" ")[0],
-                                lastname=(response.get('name')).split(" ")[1],
-                                bio=gender, fb_link=response.get('link'))
+                                first_name=(response.get('name')).split(" ")[0],
+                                last_name=(response.get('name')).split(" ")[1],
+                                gender=gender, fb_link=response.get('link'))
         Profilepic.objects.create(user=user, images='default.png')
 
 def get_username(strategy, details, backend, user=None, *args, **kwargs):

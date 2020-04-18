@@ -84,7 +84,7 @@
             <div class="mbr-white col-lg-8 col-md-7 content-container">
                 <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">SEARCH FOR SOMEONE YOU'RE LOOKING FOR</h1>
                 {% for test in test %}
-                <p>this user want to match you : {{ test.request_list }}</p>
+                <p>this user want to match you : {{ test.sender }}</p>
                 {% endfor %}
             </div>
             <div class="col-lg-4 col-md-5">
@@ -140,7 +140,7 @@
                 <div class="item-caption py-3">
                     <div class="item-name px-2">
                         <p class="mbr-fonts-style display-5">
-                            {{ key.fullname }} {{ key.lastname }}</p>
+                            {{ key.first_name }} {{ key.last_name }}</p>
                     </div>
                 </div>
                       </a>

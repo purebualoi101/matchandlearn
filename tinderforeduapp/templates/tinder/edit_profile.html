@@ -82,7 +82,7 @@
       {% if forloop.counter0 < 4 %}
       <input class="form-control" required id="{{ field.id_for_label }}" placeholder="{{ field.html_name|title }}" name="{{ field.html_name }}" type="text" value="{{ field.value }}"/><p></p>
     {% else %}
-      <select class="custom-select" name="bio" id="id_bio" onselect="{{ form.bio.value }}">
+      <select class="custom-select" name="gender" id="id_bio" onselect="{{ form.gender.value }}">
     <option value="Male">Male</option>
     <option value="Female">Female</option>
     <option value="Other">Other</option>

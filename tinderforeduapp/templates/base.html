@@ -7,7 +7,7 @@
     <h1>Match and Learn</h1>
         <h2>Welcome, {{ user.username }}!</h2>
     <a href="{% url 'tinder:logout' %}">logout</a>
-   <p>search for some one you're looking for</p><p>{{ name.fullname }}</p>
+   <p>search for some one you're looking for</p><p>{{ name.first_name }}</p>
     <form method="POST">
         <input name="subject_find" id="subject_find_id" placeholder="Enter a subject" />
         <input type="submit" value="search">
@@ -29,7 +29,7 @@
         <meta http-equiv="Refresh" content="3; url=/login/" />
     {% endif %}
 {% for test in test %}
-    <p>this user want to match you :{{ test.request_list }}</p>
+    <p>this user want to match you :{{ test.sender }}</p>
 {% endfor %}
 </body>
 {% endblock extra_js %}
