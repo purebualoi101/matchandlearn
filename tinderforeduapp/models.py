@@ -40,7 +40,7 @@ class Userinfo(models.Model):
     request = models.ManyToManyField(RequestSend,blank=True)    # collect request info.
     match = models.ManyToManyField(MatchedName,blank=True)      # collect match info.
     match_request = models.IntegerField(default=0)              # collect amount of student requests. it is used for notification.
-    massage_list = models.IntegerField(default=0)               # collect amount of message. it is used for notification.
+    message_list = models.IntegerField(default=0)               # collect amount of message. it is used for notification.
 
     def __str__(self):
         return self.name
@@ -62,8 +62,8 @@ class Userinfo(models.Model):
 
 # for collect Commentator, comment text and score.
 class Comment(models.Model):
-    post = models.ForeignKey(Userinfo,on_delete=models.CASCADE,related_name='comments',null=True)   # collect user info that receive comment.
-    name = models.CharField(max_length=80,null=True)        # collect user info that send comment.
+    post = models.ForeignKey(Userinfo,on_delete=models.CASCADE,related_name='comments',null=True)   # link to Userinfo.
+    name = models.CharField(max_length=80,null=True)        # collect comment sender name.
     comment = models.CharField(max_length=500,null=True)    # collect comment text.
     star = models.CharField(max_length=500,null=True)       # collect score.
     created_on = models.DateTimeField(auto_now_add=True,null=True)      # collect comment time.
@@ -77,21 +77,21 @@ class Comment(models.Model):
 
 # for collect user information. used when signup.
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)     # collect user info
     first_name = models.CharField(max_length=100, blank=True)       # collect user first name.
     last_name = models.CharField(max_length=100, blank=True)        # collect user last name.
     college = models.CharField(max_length=100, blank=True)          # collect user college name
     email = models.EmailField(max_length=150)                       # collect user E-mail.
     age = models.TextField(max_length=10, blank=True)               # collect user age.
-    gender = models.TextField()                                        # collect uesr gender.
+    gender = models.TextField()                                     # collect uesr gender.
 
     def __str__(self):
         return self.user.username
 
 # for collect profile picture.
 class Profilepic(models.Model):
-    user = models.OneToOneField(Userinfo, on_delete=models.CASCADE)
-    images = models.ImageField(default='default.png',upload_to='media')     # collect profile picture
+    user = models.OneToOneField(Userinfo, on_delete=models.CASCADE)         # link to Userinfo.
+    images = models.ImageField(default='default.png',upload_to='media')     # collect profile picture.
 
 
 @receiver(post_save, sender=User)
