@@ -171,7 +171,7 @@ bg{
                 <option value="5">5</option>
             </select></p>
           {% csrf_token %}
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" id="id_submit_comment">Submit</button>
         </form>
         {% endif %}
       </div>
@@ -184,7 +184,7 @@ bg{
     </div>
         <div class="row">
             <div class="col-md-12">
-                <h2>{{ comments.count }} comments</h2>
+                <h2 id="id_num_comment">{{ comments.count }} comments</h2>
 
         {% for comment in comments %}
         <div class="comments" style="padding: 10px;">

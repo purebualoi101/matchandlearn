@@ -84,7 +84,7 @@ def activate_user(request, uidb64, token, backend='django.contrib.auth.backends.
 # function for see user profile.
 def user_profile(request,user_id):
     User = Userinfo.objects.get(name=request.user.username)
-    comments = Comment.objects.filter(post=request.user.id)
+    comments = Comment.objects.filter(post=User)
     pic = Profilepic.objects.get(user=User)
     # add expert subject.
     if request.POST.get('subject_good'):
@@ -103,10 +103,10 @@ def successlogin(request):
 # function for see another profile.
 def another_profile(request,user_id):
     pic = Profilepic.objects.get(user=user_id)
-    comments = Comment.objects.filter(post=request.user.id)
     modelget = get_object_or_404(Userinfo,id=user_id)
-    Username = Userinfo.objects.get(name=request.user.username)
     match_guy = Userinfo.objects.get(id=user_id)
+    Username = Userinfo.objects.get(name=request.user.username)
+    comments = Comment.objects.filter(post=match_guy)
     url_name_list = [Username.name,match_guy.name]
     url_name_list_sort = sorted(url_name_list)
     url_chat = url_name_list_sort[0] + "_" + url_name_list_sort[1]
@@ -321,7 +321,7 @@ def student_tutor_list(request,user_id):
         list_sort = sorted([Userinfo.objects.get(name=request.user.username).name,Userinfo.objects.get(name=i.match).name])
         value = list_sort[0]+"_"+list_sort[1]
         list_match[key]=value
-    return render(request,'tinder/student_tutor_list.html',{"name":Userinfo.objects.get(name=request.user.username),'tutor_list':Userinfo.objects.get(id=user_id).match.all(),'list_match':list_match})
+    return render(request,'tinder/students_tutor_list.html',{"name":Userinfo.objects.get(name=request.user.username),'tutor_list':Userinfo.objects.get(id=user_id).match.all(),'list_match':list_match})
 
 # see matched profile.
 def watch_profile(request,user_id):
@@ -353,7 +353,7 @@ def watch_profile(request,user_id):
         Username.match.remove(unmatch_obj)
         unmatch_obj2= match_guy.match.get(match=Username.name,myself=match_guy.name)
         match_guy.match.remove(unmatch_obj2)
-        return HttpResponseRedirect(reverse('tinder:student_tutor_list', args=(Username.id,)))
+        return HttpResponseRedirect(reverse('tinder:students_tutor_list', args=(Username.id,)))
     return render(request,'tinder/watch_profile.html',{'pic':pic,'name':Userinfo.objects.get(name=request.user.username),'profile':Userinfo.objects.get(id=user_id),'post': post, 'comments': comments, 'new_comment': new_comment, 'comment_form': comment_form})
 
 # this function for edit profile.
