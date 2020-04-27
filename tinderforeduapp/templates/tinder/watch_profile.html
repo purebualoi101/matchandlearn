@@ -137,7 +137,7 @@ bg{
                 <div class="expertise-item">
                     <form action="{% url 'tinder:watch_profile' profile.id %}" method="post">
                     {% csrf_token %}
-                    <button class="btn btn-primary" name="unmatch" value="unmatch" >cancel_send_request</button>
+                    <button class="btn btn-primary" name="unmatch" value="unmatch" >cancel send request</button>
                     </form>
                 </div>
             </div>
@@ -147,7 +147,11 @@ bg{
 
 <section class="section-contact section-wrapper gray-bg">
     <div>
-      <h2>Leave comment</h2>
+        {% if reviewed == 0 %}
+      <h2>Leave review</h2>
+        {% else %}
+        <h2>Edit review</h2>
+        {% endif %}
     </div>
     <div class="row">
     <div class="col-md-8 card mb-4  mt-3 left  top">
@@ -171,20 +175,43 @@ bg{
                 <option value="5">5</option>
             </select></p>
           {% csrf_token %}
-          <button type="submit" class="btn btn-primary" id="id_submit_comment">Submit</button>
+          <button name="send_review" value="send_review" type="submit" class="btn btn-primary" id="id_submit_comment">Submit</button>
         </form>
+
         {% endif %}
       </div>
     </div>
 </section>
-
+{% if reviewed == 1 %}
 <section class="section-contact section-wrapper gray-bg">
     <div>
-      <h2>Comment</h2>
+      <h2>Remove review</h2>
+        <h3>You was reviewed. You can remove it.</h3>
+    </div>
+    <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+
+            <form method="post">
+            {% csrf_token %}
+            <button name="remove_review" value="remove_review" type="submit" class="btn btn-primary" id="id_remove_comment">Remove Review</button>
+            </form>
+
+    </div>
+    <div class="col-md-8 card mb-4  mt-3 ">
+
+      </div>
+    </div>
+</section>
+{% endif %}
+<section class="section-contact section-wrapper gray-bg">
+    <div>
+      <h2>All Reviews</h2>
     </div>
         <div class="row">
+
             <div class="col-md-12">
-                <h2 id="id_num_comment">{{ comments.count }} comments</h2>
+
+                <h2 id="id_num_comment">{{ comments.count }} Reviews</h2>
 
         {% for comment in comments %}
         <div id="id_comment_{{ comment.name }}" class="comments" style="padding: 10px;">
