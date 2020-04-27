@@ -43,7 +43,7 @@ class CommentTest(LiveServerTestCase):
     def tearDown(self):
         self.browser.quit()
 
-    def test_can_send_comment_and_comment_receiver_can_see_it(self):
+    def can_send_comment_and_comment_receiver_can_see_it(self):
         # Stefanie login website.
         self.browser.get('http://127.0.0.1:8000/login/')
         username_textbox = self.browser.find_element_by_id("id_username")
@@ -70,7 +70,7 @@ class CommentTest(LiveServerTestCase):
 
         # She found that John had no comment at all.
         num_comment = self.browser.find_element_by_id('id_num_comment').text
-        self.assertEqual(num_comment, '0 comments')
+        self.assertEqual(num_comment, '0 Reviews')
 
         # She types comment in comment textbox and selects 5 score in dropdown score.
         comment_textbox.send_keys('John is so smart. I got an A in Math because of him')
@@ -85,7 +85,7 @@ class CommentTest(LiveServerTestCase):
         # Page refresh.
         # She sees comment that she sent to John.
         num_comment = self.browser.find_element_by_id('id_num_comment').text
-        self.assertEqual(num_comment, '1 comments')
+        self.assertEqual(num_comment, '1 Reviews')
 
         stefanie_comment = self.browser.find_element_by_id('id_comment_stefanie01').text
         self.assertIn('stefanie01', stefanie_comment)
@@ -115,3 +115,64 @@ class CommentTest(LiveServerTestCase):
         self.assertIn('Comment : John is so smart. I got an A in Math because of him', stefanie_comment)
         self.assertIn('Star : 5', stefanie_comment)
         time.sleep(2)
+
+    def test_can_remove_review(self):
+        # Stefanie login website.
+        self.browser.get('http://127.0.0.1:8000/login/')
+        username_textbox = self.browser.find_element_by_id("id_username")
+        username_textbox.send_keys('stefanie01')
+        password_textbox = self.browser.find_element_by_id("id_password")
+        password_textbox.send_keys('stefpass')
+        password_textbox.send_keys(Keys.ENTER)
+        time.sleep(2)
+
+        # She wants to comment to John. She clicks "Student and Tutor list".
+        st_link = self.browser.find_element_by_link_text('Students and Tutor list')
+        st_link.click()
+        time.sleep(2)
+
+        # She sees John name and click it.
+        John_link = self.browser.find_element_by_css_selector('div.subDiv')
+        John_link.click()
+        time.sleep(2)
+
+        # She sees comment textbox, dropdown score and submit button.
+        comment_textbox = self.browser.find_element_by_id('id_comment')
+        dropdown_score = Select(self.browser.find_element_by_id('id_star'))
+        submit_btn = self.browser.find_element_by_id('id_submit_comment')
+
+        # She types comment in comment textbox and selects 5 score in dropdown score.
+        comment_textbox.send_keys('John is so smart. I got an A in Math because of him')
+        time.sleep(2)
+        dropdown_score.select_by_value('5')
+        time.sleep(2)
+
+        # She click submit button.
+        submit_btn.click()
+        time.sleep(4)
+
+        # Page refresh.
+        # She sees comment that she sent to John.
+        num_comment = self.browser.find_element_by_id('id_num_comment').text
+        self.assertEqual(num_comment, '1 Reviews')
+
+        stefanie_comment = self.browser.find_element_by_id('id_comment_stefanie01').text
+        self.assertIn('stefanie01', stefanie_comment)
+        self.assertIn('Comment : John is so smart. I got an A in Math because of him', stefanie_comment)
+        self.assertIn('Star : 5', stefanie_comment)
+        time.sleep(2)
+
+        # She sees remove button and click it.
+        remove_btn = self.browser.find_element_by_id('id_remove_comment')
+        remove_btn.click()
+        time.sleep(5)
+
+        # Page refresh.
+        num_comment = self.browser.find_element_by_id('id_num_comment').text
+        self.assertEqual(num_comment, '0 Reviews')
+
+        # She dose not see her review.
+        review_section = self.browser.find_element_by_id('id_review_section').text
+        self.assertNotIn('stefanie01', review_section)
+        self.assertNotIn('Comment : John is so smart. I got an A in Math because of him', review_section)
+        self.assertNotIn('Star : 5', review_section)
