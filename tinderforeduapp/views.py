@@ -15,6 +15,7 @@ from django.core.mail import EmailMessage
 from django.http import HttpResponse
 from django import db
 from django.db import close_old_connections
+from datetime import datetime
 # Create your views here.
 
 
@@ -332,7 +333,7 @@ def watch_profile(request,user_id):
     new_comment = None
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
-        if post.comments.filter(active=True, name=request.user.username) == 0:
+        if len(post.comments.filter(active=True, name=request.user.username)) == 0:
             if comment_form.is_valid():
 
                 # Create Comment object but don't save to database yet
@@ -343,8 +344,10 @@ def watch_profile(request,user_id):
                 # Save the comment to the database
                 new_comment.save()
         else:
+            now = datetime.now()
+            dt_string = now.strftime("%B %d, %Y, %I:%M %p")
             edit_comment = post.comments.get(active=True, name=request.user.username)
-            edit_comment.comment = request.POST['comment']
+            edit_comment.comment = request.POST['comment'] + "  (edited on : " + dt_string + ')'
             edit_comment.star = request.POST['star']
             edit_comment.save()
 
