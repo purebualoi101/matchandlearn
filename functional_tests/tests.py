@@ -82,11 +82,12 @@ class CommentTest(LiveServerTestCase):
         submit_btn.click()
         time.sleep(4)
 
+        # Page refresh.
         # She sees comment that she sent to John.
         num_comment = self.browser.find_element_by_id('id_num_comment').text
         self.assertEqual(num_comment, '1 comments')
 
-        stefanie_comment = self.browser.find_element_by_class_name('comments').text
+        stefanie_comment = self.browser.find_element_by_id('id_comment_stefanie01').text
         self.assertIn('stefanie01', stefanie_comment)
         self.assertIn('Comment : John is so smart. I got an A in Math because of him', stefanie_comment)
         self.assertIn('Star : 5', stefanie_comment)
@@ -109,7 +110,7 @@ class CommentTest(LiveServerTestCase):
         # He sees 1 comment of Stefanie.
         num_comment = self.browser.find_element_by_id('id_num_commentuser').text
         self.assertEqual(num_comment, '1 comments')
-        stefanie_comment = self.browser.find_element_by_class_name('comments').text
+        stefanie_comment = self.browser.find_element_by_id('id_comment_stefanie01').text
         self.assertIn('stefanie01', stefanie_comment)
         self.assertIn('Comment : John is so smart. I got an A in Math because of him', stefanie_comment)
         self.assertIn('Star : 5', stefanie_comment)

@@ -332,15 +332,21 @@ def watch_profile(request,user_id):
     new_comment = None
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
+        if post.comments.filter(active=True, name=request.user.username) == 0:
+            if comment_form.is_valid():
 
-            # Create Comment object but don't save to database yet
-            new_comment = comment_form.save(commit=False)
-            # Assign the current post to the comment
-            new_comment.post = post
-            new_comment.name = request.user.username
-            # Save the comment to the database
-            new_comment.save()
+                # Create Comment object but don't save to database yet
+                new_comment = comment_form.save(commit=False)
+                # Assign the current post to the comment
+                new_comment.post = post
+                new_comment.name = request.user.username
+                # Save the comment to the database
+                new_comment.save()
+        else:
+            edit_comment = post.comments.get(active=True, name=request.user.username)
+            edit_comment.comment = request.POST['comment']
+            edit_comment.star = request.POST['star']
+            edit_comment.save()
 
     else:
         comment_form = CommentForm()
