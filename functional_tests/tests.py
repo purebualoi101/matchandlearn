@@ -132,7 +132,7 @@ class CommentTest(LiveServerTestCase):
         time.sleep(2)
 
         # She sees John name and click it.
-        John_link = self.browser.find_element_by_css_selector('div.subDiv')
+        John_link = self.browser.find_element_by_id('id_name_list_john01')
         John_link.click()
         time.sleep(2)
 

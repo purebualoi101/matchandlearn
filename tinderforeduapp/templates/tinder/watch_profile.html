@@ -185,8 +185,21 @@ bg{
 {% if reviewed == 1 %}
 <section class="section-contact section-wrapper gray-bg">
     <div>
-      <h2>Remove review</h2>
-        <h3>You was reviewed. You can remove it.</h3>
+      <h2>Your review</h2>
+        {% for comment in comments %}
+            {% if comment.name == name.name %}
+        <div id="id_comment_{{ comment.name }}" class="comments" style="padding: 10px;">
+          <p class="font-weight-bold">
+            {{ comment.name }}
+            <span class=" text-muted font-weight-normal">
+              {{ comment.created_on }}
+            </span>
+          </p>
+           Comment : {{ comment.comment }} </br>
+           Star : {{ comment.star }}
+        </div>
+            {% endif %}
+        {% endfor %}
     </div>
     <div class="row">
     <div class="col-md-8 card mb-4  mt-3 left  top">

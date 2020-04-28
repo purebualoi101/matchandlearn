@@ -119,7 +119,7 @@ bg{
 
             <form method="post" action="{% url 'chat:room' value %}" target="_blank">
                 <div class ="myDiv">
-                <div class="subDiv"  onclick="location.href='{% url 'tinder:watch_profile' key.id %}'"><h1> {{ key.first_name }} {{ key.last_name }}</h1><p> Gender: {{ key.gender }} <p/><p> Age: {{ key.age }} <p/></div>
+                <div class="subDiv"  id="id_name_list_{{ key.name }}" onclick="location.href='{% url 'tinder:watch_profile' key.id %}'"><h1> {{ key.first_name }} {{ key.last_name }}</h1><p> Gender: {{ key.gender }} <p/><p> Age: {{ key.age }} <p/></div>
 
     {% csrf_token %}
                 <div class="w3-display-container w3-white" >
