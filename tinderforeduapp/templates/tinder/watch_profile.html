@@ -224,9 +224,11 @@ bg{
 
             <div class="col-md-12">
 
-                <h2 id="id_num_comment">{{ comments.count }} Reviews</h2>
+                <h2 id="id_num_comment">{{ comments.count }} Reviews {% if reviewed == 1 %}(Including your review){% endif %}</h2>
 
         {% for comment in comments %}
+            {% if comment.name == name.name %}
+            {% else %}
         <div id="id_comment_{{ comment.name }}" class="comments" style="padding: 10px;">
           <p class="font-weight-bold">
             {{ comment.name }}
@@ -237,6 +239,7 @@ bg{
            Comment : {{ comment.comment }} </br>
            Star : {{ comment.star }}
         </div>
+            {% endif %}
         {% endfor %}
             </div>
         </div>

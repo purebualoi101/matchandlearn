@@ -131,9 +131,9 @@ class CommentTest(LiveServerTestCase):
         st_link.click()
         time.sleep(2)
 
-        # She sees John name and click it.
-        John_link = self.browser.find_element_by_id('id_name_list_john01')
-        John_link.click()
+        # She sees John profile link and click it.
+        john_link = self.browser.find_element_by_id('id_name_list_john01')
+        john_link.click()
         time.sleep(2)
 
         # She sees comment textbox, dropdown score and submit button.
