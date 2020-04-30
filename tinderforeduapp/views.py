@@ -37,7 +37,7 @@ def signup(request):
         if form.is_valid():
             # collect user information.
             user = form.save(commit=False)
-            user.is_active = False
+            user.is_active = True
             user.save()
             user.refresh_from_db()
             user.profile.first_name = form.cleaned_data.get('first_name')

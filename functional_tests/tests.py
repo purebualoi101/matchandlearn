@@ -6,44 +6,18 @@ from tinderforeduapp.models import Userinfo, Subject, MatchedName
 from selenium.webdriver.support.ui import Select
 import time
 
+
 # Create your tests here.
 class CommentTest(LiveServerTestCase):
 
     def setUp(self):
         # open Firefox.
         self.browser = webdriver.Firefox()
-        # create user for login.
-        User.objects.create_user('johnny01', 'john@email.com', 'johnnypassword')
-        User.objects.create_user(username='stefanie01', email='stefanie@email.com', password='stefaniepass')
-        User.objects.create_user('eric01', 'eric@email.com', 'ericpassword')
-        # create users that use website.
-        john = Userinfo.objects.create(name='johnny01', first_name='John', last_name='Snow',
-                                age='20', school='kmutnb', gender='Male')
-        stefanie = Userinfo.objects.create(name='stefanie01', first_name='Stefanie', last_name='Walker',
-                                age='21', school='kmutnb', gender='Female')
-        eric = Userinfo.objects.create(name='eric01', first_name='Eric', last_name='Runner',
-                                age='22', school='kmutnb', gender='Male')
-
-        # John pair with Stefanie.
-        MatchedName.objects.create(myself='johnny01', match='stefanie01')
-        john_match_first = MatchedName.objects.get(myself='johnny01', match='stefanie01')
-        john.match.add(john_match_first)
-        MatchedName.objects.create(myself='stefanie01', match='johnny01')
-        stefanie_match = MatchedName.objects.get(myself='stefanie01', match='johnny01')
-        stefanie.match.add(stefanie_match)
-
-        # John pair with Stefanie.
-        MatchedName.objects.create(myself='johnny01', match='eric01')
-        john_match_second = MatchedName.objects.get(myself='johnny01', match='eric01')
-        john.match.add(john_match_second)
-        MatchedName.objects.create(myself='eric01', match='johnny01')
-        eric_match = MatchedName.objects.get(myself='eric01', match='johnny01')
-        eric.match.add(eric_match)
-
+        
     def tearDown(self):
         self.browser.quit()
 
-    def can_send_comment_and_comment_receiver_can_see_it(self):
+    def test_can_send_comment_and_comment_receiver_can_see_it(self):
         # Stefanie login website.
         self.browser.get('http://127.0.0.1:8000/login/')
         username_textbox = self.browser.find_element_by_id("id_username")
@@ -59,8 +33,8 @@ class CommentTest(LiveServerTestCase):
         time.sleep(2)
 
         # She sees John name and click it.
-        John_link = self.browser.find_element_by_css_selector('div.subDiv')
-        John_link.click()
+        john_link = self.browser.find_element_by_id('id_name_list_john01')
+        john_link.click()
         time.sleep(2)
 
         # She sees comment textbox, dropdown score and submit button.
@@ -176,3 +150,71 @@ class CommentTest(LiveServerTestCase):
         self.assertNotIn('stefanie01', review_section)
         self.assertNotIn('Comment : John is so smart. I got an A in Math because of him', review_section)
         self.assertNotIn('Star : 5', review_section)
+
+
+class LoginTest(LiveServerTestCase):
+
+    def setUp(self):
+        # open Firefox.
+        self.browser = webdriver.Firefox()
+
+    def tearDown(self):
+        self.browser.quit()
+
+    def test_can_signup(self):
+        # Jesse Lingard logins website.
+        self.browser.get('http://127.0.0.1:8000/login/')
+        time.sleep(2)
+
+        # He does not have an account. So He click signup link.
+        signup_link = self.browser.find_element_by_link_text('New to Match and Learn? Sign up now!')
+        signup_link.click()
+        time.sleep(2)
+
+        # He types his info
+        username = self.browser.find_element_by_id('id_username')
+        username.send_keys('lingard14')
+        password = self.browser.find_element_by_id('id_password1')
+        password.send_keys('jlpassword')
+        c_password = self.browser.find_element_by_id('id_password2')
+        c_password.send_keys('jlpassword')
+        first_name = self.browser.find_element_by_id('id_first_name')
+        first_name.send_keys('Jesse')
+        last_name = self.browser.find_element_by_id('id_last_name')
+        last_name.send_keys('Lingard')
+        age = self.browser.find_element_by_id('id_age')
+        age.send_keys('27')
+        gender = Select(self.browser.find_element_by_id('id_gender'))
+        gender.select_by_value('Male')
+        email = self.browser.find_element_by_id('id_email')
+        email.send_keys('lingard@gmail.com')
+        college = self.browser.find_element_by_id('id_college')
+        college.send_keys('KMUTNB')
+        time.sleep(2)
+
+        # He clicks signup button.
+        signup_btn = self.browser.find_element_by_tag_name('button')
+        signup_btn.click()
+        time.sleep(10)
+
+        # He sees message about verify account.
+        message = self.browser.find_element_by_tag_name('p').text
+        self.assertIn('Please confirm your email address', message)
+        self.assertIn('to complete the registration.', message)
+        time.sleep(2)
+
+        # He clicks Back to login link.
+        login_link = self.browser.find_element_by_link_text('Back to login')
+        login_link.click()
+        time.sleep(2)
+
+    def test_can_login(self):
+        # Jesse Lingard wants to login "Match and Learn" website.
+        self.browser.get('http://127.0.0.1:8000/login/')
+
+        username_textbox = self.browser.find_element_by_id("id_username")
+        username_textbox.send_keys('lingard14')
+        password_textbox = self.browser.find_element_by_id("id_password")
+        password_textbox.send_keys('jlpassword')
+        password_textbox.send_keys(Keys.ENTER)
+        time.sleep(2)
