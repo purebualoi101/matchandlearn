@@ -17,15 +17,18 @@ class CommentTest(LiveServerTestCase):
     def tearDown(self):
         self.browser.quit()
 
+    def login(self, username, password):
+        username_textbox = self.browser.find_element_by_id("id_username")
+        username_textbox.send_keys(username)
+        password_textbox = self.browser.find_element_by_id("id_password")
+        password_textbox.send_keys(password)
+        password_textbox.send_keys(Keys.ENTER)
+        time.sleep(2)
+
     def test_can_send_comment_and_comment_receiver_can_see_it(self):
         # Stefanie login website.
         self.browser.get('http://127.0.0.1:8000/login/')
-        username_textbox = self.browser.find_element_by_id("id_username")
-        username_textbox.send_keys('stefanie01')
-        password_textbox = self.browser.find_element_by_id("id_password")
-        password_textbox.send_keys('stefpass')
-        password_textbox.send_keys(Keys.ENTER)
-        time.sleep(2)
+        self.login('stefanie01', 'stefpass')
 
         # She wants to comment to John. She clicks "Student and Tutor list".
         st_link = self.browser.find_element_by_link_text('Students and Tutor list')
@@ -69,12 +72,7 @@ class CommentTest(LiveServerTestCase):
 
         # John login website.
         self.browser.get('http://127.0.0.1:8000/login/')
-        username_textbox = self.browser.find_element_by_id("id_username")
-        username_textbox.send_keys('john01')
-        password_textbox = self.browser.find_element_by_id("id_password")
-        password_textbox.send_keys('johnpass')
-        password_textbox.send_keys(Keys.ENTER)
-        time.sleep(2)
+        self.login('john01', 'johnpass')
 
         # He wants to see comment. He clicks his profile link.
         profile_link = self.browser.find_element_by_link_text('Profile : John')
@@ -93,12 +91,7 @@ class CommentTest(LiveServerTestCase):
     def test_can_remove_review(self):
         # Stefanie login website.
         self.browser.get('http://127.0.0.1:8000/login/')
-        username_textbox = self.browser.find_element_by_id("id_username")
-        username_textbox.send_keys('stefanie01')
-        password_textbox = self.browser.find_element_by_id("id_password")
-        password_textbox.send_keys('stefpass')
-        password_textbox.send_keys(Keys.ENTER)
-        time.sleep(2)
+        self.login('stefanie01', 'stefpass')
 
         # She wants to comment to John. She clicks "Student and Tutor list".
         st_link = self.browser.find_element_by_link_text('Students and Tutor list')
@@ -217,4 +210,81 @@ class LoginTest(LiveServerTestCase):
         password_textbox = self.browser.find_element_by_id("id_password")
         password_textbox.send_keys('jlpassword')
         password_textbox.send_keys(Keys.ENTER)
+        time.sleep(2)
+
+
+class SubjectTest(LiveServerTestCase):
+
+    def setUp(self):
+        # open Firefox.
+        self.browser = webdriver.Firefox()
+
+    def tearDown(self):
+        self.browser.quit()
+
+    def login(self, username, password):
+        username_textbox = self.browser.find_element_by_id("id_username")
+        username_textbox.send_keys(username)
+        password_textbox = self.browser.find_element_by_id("id_password")
+        password_textbox.send_keys(password)
+        password_textbox.send_keys(Keys.ENTER)
+        time.sleep(2)
+
+    def check_for_row_in_list_table(self, row_text):
+        table = self.browser.find_element_by_id('expert_subject_table')
+        rows = table.find_elements_by_tag_name('tr')
+        self.assertIn(row_text, [row.text for row in rows])
+
+    def can_add_expertise_subject(self):
+        # Jesse Lingard login "Match and Learn" website.
+        self.browser.get('http://127.0.0.1:8000/login/')
+
+        self.login('lingard14', 'jlpassword')
+
+        # He clicks his profile link to add expertise subject.
+        lingard_link = self.browser.find_element_by_link_text('Profile : Jesse')
+        lingard_link.click()
+        time.sleep(2)
+
+        # He types "physic" into "Add your expertise subject" textbox.
+        subject_textbox = self.browser.find_element_by_id('subject_good_id')
+        subject_textbox.send_keys('physic')
+        time.sleep(2)
+
+        # He clicks submit button to add expertise subject.
+        submit_btn = self.browser.find_element_by_name('add_button')
+        submit_btn.click()
+        time.sleep(2)
+
+        # the page show lists of his expertise subject.
+        self.check_for_row_in_list_table('1: physic')
+
+        # He types "math" into "Add your expertise subject" textbox.
+        subject_textbox = self.browser.find_element_by_id('subject_good_id')
+        subject_textbox.send_keys('math')
+        time.sleep(2)
+        submit_btn = self.browser.find_element_by_name('add_button')
+        submit_btn.click()
+        time.sleep(2)
+
+        # the page show lists of his expertise subject.
+        self.check_for_row_in_list_table('1: physic')
+        self.check_for_row_in_list_table('2: math')
+
+    def test_can_remove_expertise_subject(self):
+        # Jesse Lingard login "Match and Learn" website.
+        self.browser.get('http://127.0.0.1:8000/login/')
+        self.login('lingard14', 'jlpassword')
+
+        # He clicks his profile link to remove expertise subject.
+        lingard_link = self.browser.find_element_by_link_text('Profile : Jesse')
+        lingard_link.click()
+        time.sleep(2)
+
+        # He selects math checkbox to remove it
+        table = self.browser.find_element_by_id('expert_subject_table')
+        checkbox = table.find_element_by_id('subject_name:2')
+        checkbox.click()
+        remove_select = self.browser.find_element_by_id("remove_button_id")
+        remove_select.send_keys(Keys.ENTER)
         time.sleep(2)
