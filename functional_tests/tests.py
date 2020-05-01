@@ -8,12 +8,13 @@ import time
 
 
 # Create your tests here.
+# delete review John first
 class CommentTest(LiveServerTestCase):
 
     def setUp(self):
         # open Firefox.
         self.browser = webdriver.Firefox()
-        
+
     def tearDown(self):
         self.browser.quit()
 
@@ -145,6 +146,7 @@ class CommentTest(LiveServerTestCase):
         self.assertNotIn('Star : 5', review_section)
 
 
+# delete Lingard first.
 class LoginTest(LiveServerTestCase):
 
     def setUp(self):
@@ -235,7 +237,7 @@ class SubjectTest(LiveServerTestCase):
         rows = table.find_elements_by_tag_name('tr')
         self.assertIn(row_text, [row.text for row in rows])
 
-    def can_add_expertise_subject(self):
+    def test_can_add_expertise_subject(self):
         # Jesse Lingard login "Match and Learn" website.
         self.browser.get('http://127.0.0.1:8000/login/')
 
@@ -287,4 +289,106 @@ class SubjectTest(LiveServerTestCase):
         checkbox.click()
         remove_select = self.browser.find_element_by_id("remove_button_id")
         remove_select.send_keys(Keys.ENTER)
+        time.sleep(2)
+
+        # the page show lists of his expertise subject.
+        self.check_for_row_in_list_table('1: physic')
+
+
+class MatchTest(LiveServerTestCase):
+
+    def setUp(self):
+        # open Firefox.
+        self.browser = webdriver.Firefox()
+        self.browser.set_window_size(1920, 1080)
+
+    def tearDown(self):
+        self.browser.quit()
+
+    def login(self, username, password):
+        username_textbox = self.browser.find_element_by_id("id_username")
+        username_textbox.send_keys(username)
+        password_textbox = self.browser.find_element_by_id("id_password")
+        password_textbox.send_keys(password)
+        password_textbox.send_keys(Keys.ENTER)
+        time.sleep(2)
+
+    def test_a_can_search_tutor(self):
+        # Jesse Lingard login "Match and Learn" website.
+        self.browser.get('http://127.0.0.1:8000/login/')
+        self.login('lingard14', 'jlpassword')
+
+        # He wants to find math tutor. He type "math" into subject textbox.
+        sublect_textbox = self.browser.find_element_by_id('subject_find_id')
+        sublect_textbox.send_keys('math')
+        time.sleep(2)
+
+        # He clicks search button.
+        search_btn = self.browser.find_element_by_id('id_search_button')
+        search_btn.click()
+        time.sleep(2)
+
+        # He sees John who is good at math.
+        john_link = self.browser.find_element_by_link_text('John Snow').text
+        self.assertEqual('John Snow', john_link)
+        time.sleep(2)
+
+    def test_can_accept_request(self):
+        # Jesse Lingard search math tutor and find John.
+        self.test_a_can_search_tutor()
+
+        # He clicks John profile link.
+        john_link = self.browser.find_element_by_link_text('John Snow')
+        self.browser.execute_script("arguments[0].click();", john_link)
+        time.sleep(2)
+
+        # He wants John to be a tutor, so he introduce himself in introduce textbox and click "send request"
+        introduce = self.browser.find_element_by_id('text_request')
+        introduce.send_keys('Hi I am Lingard. I want you to teach me math!')
+        send_request = self.browser.find_element_by_name('match')
+        time.sleep(2)
+        send_request.click()
+        time.sleep(2)
+
+        # John login website
+        self.browser.get('http://127.0.0.1:8000/login/')
+        self.login('john01', 'johnpass')
+
+        # He check student request.
+        request_link = self.browser.find_element_by_name('Match request')
+        request_link.click()
+        time.sleep(2)
+
+        # He sees Lingard request, so he click Lingard profile link.
+        lingard_link = self.browser.find_element_by_id('id_lingard14_request')
+        lingard_link.click()
+        time.sleep(2)
+
+        # He sees introduce message and click "accept" button.
+        decision_section = self.browser.find_element_by_id('id_decision_section').text
+        self.assertIn('Hi I am Lingard. I want you to teach me math!', decision_section)
+        accept_btn = self.browser.find_element_by_name('accept')
+        accept_btn.click()
+        time.sleep(2)
+
+        # He check that Lingard is his student. He clicks "Students and Tutor list".
+        st_link = self.browser.find_element_by_link_text('Students and Tutor list')
+        st_link.click()
+        time.sleep(2)
+
+        # There is Lingard profile link.
+        lingard_link = self.browser.find_element_by_id('id_name_list_lingard14')
+        time.sleep(2)
+
+        # Jesse Lingard login "Match and Learn" website.
+        self.browser.get('http://127.0.0.1:8000/login/')
+        self.login('lingard14', 'jlpassword')
+
+        # He check that John is his tutor. He clicks "Students and Tutor list".
+        st_link = self.browser.find_element_by_link_text('Students and Tutor list')
+        st_link.click()
+        time.sleep(2)
+
+        # There is John profile link.
+        john_link = self.browser.find_element_by_id('id_name_list_john01')
         time.sleep(2)

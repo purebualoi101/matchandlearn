@@ -4156,3 +4156,567 @@ JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 6
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1588270401739	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofile3OApQm"
+1588270402044	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588270402474	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588270402474	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588270402474	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588270402474	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588270403761	Marionette	INFO	Listening on port 64091
+1588270403855	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588270408119	Marionette	INFO	Stopped listening on port 64091
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588270601232	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofilerY3l8q"
+1588270601523	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588270601964	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588270601965	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588270601965	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588270601965	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588270603248	Marionette	INFO	Listening on port 64258
+1588270603260	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588270609597	Marionette	INFO	Stopped listening on port 64258
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1588271042083	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofile7ua39u"
+1588271042376	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588271042804	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588271042805	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588271042805	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588271042805	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588271044078	Marionette	INFO	Listening on port 64553
+1588271044100	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588271050474	Marionette	INFO	Stopped listening on port 64553
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588273504970	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofilekfwB7S"
+1588273505263	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588273505703	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588273505704	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588273505704	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588273505704	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588273506977	Marionette	INFO	Listening on port 65380
+1588273506984	Marionette	WARN	TLS certificate errors will be ignored for this session
+1588273507009	Marionette	INFO	Stopped listening on port 65380
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588273580596	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofile2utRGd"
+1588273580889	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588273581322	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588273581322	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588273581322	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588273581322	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588273582601	Marionette	INFO	Listening on port 65418
+1588273582612	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588273588990	Marionette	INFO	Stopped listening on port 65418
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588273592917	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileacQpXQ"
+1588273593209	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588273593642	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588273593642	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588273593642	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588273593642	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588273595060	Marionette	INFO	Listening on port 65468
+1588273595529	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588273601918	Marionette	INFO	Stopped listening on port 65468
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588273624799	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileO4hYiM"
+1588273625087	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588273625526	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588273625526	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588273625526	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588273625526	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588273626890	Marionette	INFO	Listening on port 65524
+1588273626918	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588273635274	Marionette	INFO	Stopped listening on port 65524
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588273639204	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileUJFY6v"
+1588273639500	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588273639935	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588273639935	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588273639935	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588273639935	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588273641208	Marionette	INFO	Listening on port 49189
+1588273641223	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588273649676	Marionette	INFO	Stopped listening on port 49189
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588274029146	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofile4g6abz"
+1588274029434	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588274029871	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588274029871	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588274029871	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588274029871	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588274031099	Marionette	INFO	Listening on port 49255
+1588274031158	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588274039541	Marionette	INFO	Stopped listening on port 49255
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588274043574	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileZ81BuE"
+1588274043869	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588274044390	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588274044390	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588274044391	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588274044391	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588274045858	Marionette	INFO	Listening on port 49307
+1588274046190	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588274054629	Marionette	INFO	Stopped listening on port 49307
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588274120322	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileT00jj2"
+1588274120612	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588274121047	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588274121047	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588274121047	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588274121048	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588274122368	Marionette	INFO	Listening on port 49387
+1588274122433	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588274130816	Marionette	INFO	Stopped listening on port 49387
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588274134819	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofile5T1kwf"
+1588274135113	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588274135553	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588274135553	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588274135553	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588274135553	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588274136621	Marionette	INFO	Listening on port 49439
+1588274136928	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588274145354	Marionette	INFO	Stopped listening on port 49439
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588274355677	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileVLuprm"
+1588274355973	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588274356413	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588274356413	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588274356413	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588274356413	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588274357672	Marionette	INFO	Listening on port 49520
+1588274357696	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588274366210	Marionette	INFO	Stopped listening on port 49520
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588274370126	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileVXru9G"
+1588274370421	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588274370961	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588274370961	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588274370961	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588274370961	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588274372084	Marionette	INFO	Listening on port 49570
+1588274372337	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588274380803	Marionette	INFO	Stopped listening on port 49570
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588343732339	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofile5zGH7L"
+1588343733365	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588343733812	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588343733812	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588343733812	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588343733812	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588343735280	Marionette	INFO	Listening on port 51399
+1588343735495	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588343744110	Marionette	INFO	Stopped listening on port 51399
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588343748275	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofiles7hiCc"
+1588343748625	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588343749228	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588343749229	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588343749229	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588343749229	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588343750847	Marionette	INFO	Listening on port 51454
+1588343750902	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588343759363	Marionette	INFO	Stopped listening on port 51454
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588344555374	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileleDc0x"
+1588344555673	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588344556241	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588344556241	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588344556241	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588344556241	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588344557521	Marionette	INFO	Listening on port 51931
+1588344557986	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588344566424	Marionette	INFO	Stopped listening on port 51931
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588344570409	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileeGTq4Z"
+1588344570697	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588344571124	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588344571124	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588344571125	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588344571125	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588344572425	Marionette	INFO	Listening on port 51987
+1588344572520	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588344581058	Marionette	INFO	Stopped listening on port 51987
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588344769209	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileZ9z0qi"
+1588344769506	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588344769936	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588344769936	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588344769936	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588344769936	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588344771193	Marionette	INFO	Listening on port 52140
+1588344771221	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588344779639	Marionette	INFO	Stopped listening on port 52140
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588344783640	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofile622jj5"
+1588344783930	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588344784376	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588344784376	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588344784376	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588344784376	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588344785529	Marionette	INFO	Listening on port 52197
+1588344786253	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588344799750	Marionette	INFO	Stopped listening on port 52197
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588345063544	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofilenJUR3D"
+1588345063843	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588345064272	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588345064272	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588345064272	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588345064273	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588345065555	Marionette	INFO	Listening on port 52430
+1588345065655	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588345074067	Marionette	INFO	Stopped listening on port 52430
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588345078400	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofilerQAJpC"
+1588345078706	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588345079222	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588345079222	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588345079222	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588345079222	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588345080575	Marionette	INFO	Listening on port 52481
+1588345081029	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588345094467	Marionette	INFO	Stopped listening on port 52481
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588348371525	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofilePv2XCV"
+1588348371822	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588348372252	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588348372252	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588348372252	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588348372253	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588348373284	Marionette	INFO	Listening on port 54337
+1588348373545	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588348381953	Marionette	INFO	Stopped listening on port 54337
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588348385878	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofilecYcSrz"
+1588348386166	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588348386588	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588348386589	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588348386589	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588348386589	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588348387860	Marionette	INFO	Listening on port 54391
+1588348387887	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588348404962	Marionette	INFO	Stopped listening on port 54391
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588348697785	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileX3rfIx"
+1588348698088	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588348698646	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588348698646	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588348698647	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588348698647	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588348700189	Marionette	INFO	Listening on port 54616
+1588348700402	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588348708776	Marionette	INFO	Stopped listening on port 54616
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588348712748	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileKBeT3L"
+1588348713038	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588348713468	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588348713469	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588348713469	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588348713469	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588348714682	Marionette	INFO	Listening on port 54674
+1588348714759	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588348736312	Marionette	INFO	Stopped listening on port 54674
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588349140942	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofilebY0kHt"
+1588349141232	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588349141660	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588349141661	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588349141661	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588349141661	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588349142923	Marionette	INFO	Listening on port 55035
+1588349142952	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588349151367	Marionette	INFO	Stopped listening on port 55035
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588349155776	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileSToStY"
+1588349156092	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588349156622	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588349156622	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588349156622	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588349156622	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588349157731	Marionette	INFO	Listening on port 55092
+1588349157815	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588349175130	Marionette	INFO	Stopped listening on port 55092
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588349451390	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileFuQpYA"
+1588349451739	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588349452332	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588349452332	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588349452332	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588349452332	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588349453794	Marionette	INFO	Listening on port 55351
+1588349454002	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588349462398	Marionette	INFO	Stopped listening on port 55351
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588349466422	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofile394vjh"
+1588349466713	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588349467138	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588349467139	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588349467139	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588349467139	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588349468459	Marionette	INFO	Listening on port 55425
+1588349468532	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588349485626	Marionette	INFO	Stopped listening on port 55425
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588349537777	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofileUZvl28"
+1588349538077	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588349538503	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588349538503	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588349538503	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588349538503	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588349539818	Marionette	INFO	Listening on port 55520
+1588349539890	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588349548305	Marionette	INFO	Stopped listening on port 55520
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1588349552304	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\purep\\AppData\\Local\\Temp\\rust_mozprofilerWx07X"
+1588349552597	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1588349553028	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1588349553028	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1588349553028	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1588349553028	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1588349554443	Marionette	INFO	Listening on port 55575
+1588349554925	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+JavaScript error: http://127.0.0.1:8000/static/assets/theme/js/script.js, line 636: TypeError: $(...).swipe is not a function
+1588349589170	Marionette	INFO	Stopped listening on port 55575
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+

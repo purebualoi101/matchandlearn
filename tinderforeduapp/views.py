@@ -127,31 +127,46 @@ def another_profile(request, user_id):
     url_name_list = [Username.name, match_guy.name]
     url_name_list_sort = sorted(url_name_list)
     url_chat = url_name_list_sort[0] + "_" + url_name_list_sort[1]
-    # add a comment and can comment once.
-    if request.POST.get('comment_input'):
-        comment_text = Comment.objects.create(comment=request.POST['comment_input'])
-        # create new comment if user never comment to this profile.
-        if not Comment.objects.filter(whocomment=Username, commentto=match_guy):
-            create_comment = Comment.objects.create(comment_value=comment_text, whocomment=Username,
-                                                    commentto=match_guy)
-            create_comment.save()
-        # edit comment if user ever comment to this profile.
+
+    if request.POST.get('cancel_send_request'):
+        Username = Userinfo.objects.get(name=request.user.username)
+        match_guy = Userinfo.objects.get(id=user_id)
+        remove_match = match_guy.request.get(sender=Username.name, receiver=match_guy.name)
+        match_guy.request.remove(remove_match)
+        Userinfo.objects.get(id=user_id).denotify()  # denotify function will -1 student request notification.
+        Userinfo.objects.get(id=user_id).save()
+        return render(request, 'tinder/profile.html',
+                      {'comments': comments, 'pic': pic, 'name': Userinfo.objects.get(name=request.user.username),
+                       'subject': Userinfo.objects.get(id=user_id).expert_subject.all(),
+                       'test': Userinfo.objects.get(
+                           name=request.user.username).match.all(),
+                       'profile': Userinfo.objects.get(id=user_id), 'chat_room_name': url_chat})
+    already_match = 0
+    if request.method == "POST":
+        # they are already paired.
+        if match_guy.request.filter(sender=Username.name, receiver=match_guy.name) or Username.request.filter(
+                sender=match_guy.name, receiver=Username.name):
+            already_match = 1
+            return render(request, 'tinder/profile.html',
+                          {'already_match': already_match, 'comments': comments, 'pic': pic,
+                           'name': Userinfo.objects.get(name=request.user.username),
+                           'subject': Userinfo.objects.get(id=user_id).expert_subject.all(),
+                           'test': Userinfo.objects.get(name=request.user.username).match.all(), 'check': 1,
+                           'profile': Userinfo.objects.get(id=user_id), 'chat_room_name': url_chat})
+        # send request.
         else:
-            edit_comment = Comment.objects.get(whocomment=Username, commentto=match_guy)
-            edit_comment.comment_value = comment_text
-            edit_comment.save()
-    # add a score, can add it once and can give a score of one to five.
-    if request.POST.get('star_input'):
-        star_score = Comment.objects.create(comment=request.POST['star_input'])
-        # create new score if user never give it to this profile.
-        if not Comment.objects.filter(whocomment=Username, commentto=match_guy):
-            create_score = Comment.objects.create(comment_value=star_score, whocomment=Username, commentto=match_guy)
-            create_score.save()
-        # edit score if user ever give it to this profile.
-        else:
-            edit_score = Comment.objects.get(whocomment=Username, commentto=match_guy)
-            edit_score.comment_value = star_score
-            edit_score.save()
+            user_name = RequestSend.objects.create(sender=Username.name, request_message=request.POST['text_request'],
+                                                   receiver=match_guy.name)
+            match_guy.request.add(user_name)
+            Userinfo.objects.get(id=user_id).notify()  # notify function will +1 student request notification.
+            Userinfo.objects.get(id=user_id).save()
+            return render(request, 'tinder/profile.html',
+                          {'already_match': already_match, 'comments': comments, 'pic': pic,
+                           'name': Userinfo.objects.get(name=request.user.username),
+                           'subject': Userinfo.objects.get(id=user_id).expert_subject.all(),
+                           'test': Userinfo.objects.get(name=request.user.username).match.all(), 'check': 1,
+                           'profile': Userinfo.objects.get(id=user_id), 'chat_room_name': url_chat})
+
     # if user is student or tutor of this profile. he can chat.
     if match_guy.request.filter(sender=Username.name).exists():
         return render(request, 'tinder/profile.html',
