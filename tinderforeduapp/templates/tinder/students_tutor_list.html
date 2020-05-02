@@ -123,7 +123,7 @@ bg{
 
     {% csrf_token %}
                 <div class="w3-display-container w3-white" >
-                <div class="w3-display-bottomright"><button class="button button4" name="room" value="room" >chat room</button></div></div>
+                <div class="w3-display-bottomright"><button id="id_{{ key.name }}_chat" class="button button4" name="room" value="room" >chat room</button></div></div>
                     </div>
             </form>
     {% endfor %}

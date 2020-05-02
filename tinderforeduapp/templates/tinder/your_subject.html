@@ -175,7 +175,7 @@ bg{
                 <h2 id="id_num_commentuser">{{ comments.count }} comments</h2>
 
         {% for comment in comments %}
-        <div class="comments" style="padding: 10px;">
+        <div id="id_comment_{{ comment.name }}" class="comments" style="padding: 10px;">
           <p class="font-weight-bold">
             {{ comment.name }}
             <span class=" text-muted font-weight-normal">

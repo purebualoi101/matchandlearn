@@ -133,7 +133,7 @@
           <div class="row media-row">
             {% for key,value in infoma.items %}
               <div class="team-item col-lg-3 col-md-6">
-                  <a href="/{{ key.id }}/profile">
+                  <a id="id_{{ key.name }}" href="/{{ key.id }}/profile">
                 <div class="item-image">
                     <img src="{{ value.images.url }}">
                 </div>

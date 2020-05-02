@@ -95,6 +95,9 @@ def user_profile(request, user_id):
     User = Userinfo.objects.get(name=request.user.username)
     comments = Comment.objects.filter(post=User)
     pic = Profilepic.objects.get(user=User)
+    # check that user has loged in.
+    if (Userinfo.objects.filter(name=request.user.username).count() == 0):
+        return HttpResponseRedirect('/login')
     # add expert subject.
     if request.POST.get('subject_good'):
         subject = Subject.objects.create(subject_name=request.POST['subject_good'],
@@ -127,6 +130,9 @@ def another_profile(request, user_id):
     url_name_list = [Username.name, match_guy.name]
     url_name_list_sort = sorted(url_name_list)
     url_chat = url_name_list_sort[0] + "_" + url_name_list_sort[1]
+    # check that user has loged in.
+    if (Userinfo.objects.filter(name=request.user.username).count() == 0):
+        return HttpResponseRedirect('/login')
 
     if request.POST.get('cancel_send_request'):
         Username = Userinfo.objects.get(name=request.user.username)
@@ -269,6 +275,9 @@ def student_request(request, user_id):
     username = Userinfo.objects.get(name=request.user.username)
     username.read()  # read function will make notification is 0 .
     username.save()
+    # check that user has loged in.
+    if (Userinfo.objects.filter(name=request.user.username).count() == 0):
+        return HttpResponseRedirect('/login')
     # show list of people who send request to user.
     for i in match_list_id:
         list_match.append(Userinfo.objects.get(name=i.sender))
@@ -288,6 +297,9 @@ def send_request(request, user_id):
     url_name_list_sort = sorted(url_name_list)
     url_chat = url_name_list_sort[0] + "_" + url_name_list_sort[1]
     already_match = 0
+    # check that user has loged in.
+    if (Userinfo.objects.filter(name=request.user.username).count() == 0):
+        return HttpResponseRedirect('/login')
     if request.method == "POST":
         # they are already paired.
         if match_guy.request.filter(sender=Username.name, receiver=match_guy.name) or Username.request.filter(
@@ -353,6 +365,9 @@ def accept_or_not_request(request, user_id):
     url_name_list_sort = sorted(url_name_list)
     comments = Comment.objects.filter(post=user_id)
     chat_room_name = url_name_list_sort[0] + "_" + url_name_list_sort[1]
+    # check that user has loged in.
+    if (Userinfo.objects.filter(name=request.user.username).count() == 0):
+        return HttpResponseRedirect('/login')
     # accept student request.
     if request.POST.get('accept'):
         Username = Userinfo.objects.get(name=request.user.username)
@@ -383,6 +398,9 @@ def accept_or_not_request(request, user_id):
 def student_tutor_list(request, user_id):
     match_list_id = Userinfo.objects.get(name=request.user.username).match.all()
     list_match = {}
+    # check that user has loged in.
+    if (Userinfo.objects.filter(name=request.user.username).count() == 0):
+        return HttpResponseRedirect('/login')
     for i in match_list_id:
         list_sort = []
         key = Userinfo.objects.get(name=i.match)
@@ -403,6 +421,9 @@ def watch_profile(request, user_id):
     comments = post.comments.filter(active=True)
     new_comment = None
     reviewed = 0
+    # check that user has loged in.
+    if (Userinfo.objects.filter(name=request.user.username).count() == 0):
+        return HttpResponseRedirect('/login')
     if len(post.comments.filter(active=True, name=request.user.username)) == 1:
         reviewed = 1
 
@@ -436,7 +457,7 @@ def watch_profile(request, user_id):
         username.match.remove(unmatch_obj)
         unmatch_obj2 = match_guy.match.get(match=username.name, myself=match_guy.name)
         match_guy.match.remove(unmatch_obj2)
-        return HttpResponseRedirect(reverse('tinder:students_tutor_list', args=(username.id,)))
+        return HttpResponseRedirect(reverse('tinder:student_tutor_list', args=(username.id,)))
 
     # remove review.
     if request.POST.get('remove_review'):
@@ -454,6 +475,9 @@ def watch_profile(request, user_id):
 def edit_profile(request, user_id):
     User = Userinfo.objects.get(name=request.user.username)
     Pic = Profilepic.objects.get(user=User)
+    # check that user has loged in.
+    if (Userinfo.objects.filter(name=request.user.username).count() == 0):
+        return HttpResponseRedirect('/login')
     if request.method == "POST":
         form = Editprofileform(request.POST, instance=User)
         formpic = profilepicture(request.POST, request.FILES, instance=Pic)
