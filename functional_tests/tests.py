@@ -424,65 +424,75 @@ class MatchTest(LiveServerTestCase):
         # She clicks search button.
         search_btn = self.browser.find_element_by_id('id_search_button')
         search_btn.click()
-        time.sleep(10000)
+        time.sleep(2)
 
         # She sees John who is good at math.
         john_link = self.browser.find_element_by_id('id_john01').text
         self.assertEqual('John Snow', john_link)
         time.sleep(2)
 
-    def can_accept_request(self):
-        # Jesse Lingard search math tutor and find John.
+    def test_can_accept_request(self):
+        # Stefanie search math tutor and find John.
         self.test_a_can_search_tutor()
 
-        # He clicks John profile link.
+        # She clicks John profile link.
         john_link = self.browser.find_element_by_id('id_john01')
         self.browser.execute_script("arguments[0].click();", john_link)
         time.sleep(2)
 
-        # He wants John to be a tutor, so he introduce himself in introduce textbox and click "send request"
+        # She wants John to be a tutor, so she introduce himself in introduce textbox and click "send request"
         introduce = self.browser.find_element_by_id('text_request')
-        introduce.send_keys('Hi I am Lingard. I want you to teach me math!')
+        introduce.send_keys('Hi I am Stefanie. I want you to teach me math!')
         send_request = self.browser.find_element_by_name('match')
         time.sleep(2)
         send_request.click()
         time.sleep(2)
 
+        # She logout.
+        logout = self.browser.find_element_by_link_text('Logout')
+        logout.click()
+        time.sleep(2)
+
         # John login website
-        self.browser.get('http://127.0.0.1:8000/login/')
-        self.login('john01', 'johnpass')
+        self.browser.get(self.live_server_url)
+        self.login('john01', 'johnpassword')
 
         # He check student request.
         request_link = self.browser.find_element_by_name('Match request')
         request_link.click()
         time.sleep(2)
 
-        # He sees Lingard request, so he click Lingard profile link.
-        lingard_link = self.browser.find_element_by_id('id_lingard14_request')
-        lingard_link.click()
+        # He sees Stefanie request, so he click Stefanie profile link.
+        stefanie01_link = self.browser.find_element_by_id('id_stefanie01_request')
+        stefanie01_link.click()
         time.sleep(2)
 
         # He sees introduce message and click "accept" button.
         decision_section = self.browser.find_element_by_id('id_decision_section').text
-        self.assertIn('Hi I am Lingard. I want you to teach me math!', decision_section)
+        self.assertIn('Hi I am Stefanie. I want you to teach me math!', decision_section)
         accept_btn = self.browser.find_element_by_name('accept')
         accept_btn.click()
         time.sleep(2)
 
-        # He check that Lingard is his student. He clicks "Students and Tutor list".
+        # He check that Stefanie is his student. He clicks "Students and Tutor list".
         st_link = self.browser.find_element_by_link_text('Students and Tutor list')
         st_link.click()
         time.sleep(2)
 
-        # There is Lingard profile link.
-        lingard_link = self.browser.find_element_by_id('id_name_list_lingard14')
+        # There is Stefanie profile link.
+        Stefanie_link = self.browser.find_element_by_id('id_name_list_stefanie01')
         time.sleep(2)
 
-        # Jesse Lingard login "Match and Learn" website.
-        self.browser.get('http://127.0.0.1:8000/login/')
-        self.login('lingard14', 'jlpassword')
+        # He logout.
+        logout = self.browser.find_element_by_link_text('Logout')
+        logout.click()
+        time.sleep(2)
 
-        # He check that John is his tutor. He clicks "Students and Tutor list".
+        # Stefanie login "Match and Learn" website.
+        self.browser.get(self.live_server_url)
+        self.login('stefanie01', 'stefaniepassword')
+
+        # She check that John is her tutor. She clicks "Students and Tutor list".
         st_link = self.browser.find_element_by_link_text('Students and Tutor list')
         st_link.click()
         time.sleep(2)
