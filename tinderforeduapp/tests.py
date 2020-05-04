@@ -82,13 +82,16 @@ class ReviewTest(TestCase):
 
         # create review ( Stefanie send review to John ).
         Comment.objects.create(post=self.john, name='stefanie01', comment='very good', star='5')
+        Comment.objects.create(post=self.john, name='eric01', comment='so bad', star='1')
 
         # Stefanie remove review.
-        self.client.post('/' + str(self.john.id) + '/watch_profile', {'remove_review': 'remove_review'})
+        self.client.post('/' + str(self.john.id) + '/watch_profile', data={'remove_review': 'remove_review'})
 
-        # check that comment is removed.
-        all_comment = Comment.objects.all()
-        self.assertEqual(all_comment.count(), 0)
+        all_review = Comment.objects.all()
+        self.assertEqual(all_review.count(), 1)
+        first_review = all_review[0]
+        self.assertNotEquals(first_review.star, '5')
+        self.assertNotEqual(first_review.comment, 'very good')
 
     def test_edit_review(self):
         # login as Stefanie.

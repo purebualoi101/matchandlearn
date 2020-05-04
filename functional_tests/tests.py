@@ -8,7 +8,7 @@ import time
 
 
 # Create your tests here.
-class CommentTest(LiveServerTestCase):
+'''class CommentTest(LiveServerTestCase):
 
     def setUp(self):
         # open Firefox.
@@ -79,7 +79,7 @@ class CommentTest(LiveServerTestCase):
         st_link.click()
         time.sleep(2)
 
-        # She sees John name and click it.
+        # She sees John profile link and click it.
         john_link = self.browser.find_element_by_id('id_name_list_john01')
         john_link.click()
         time.sleep(2)
@@ -191,7 +191,7 @@ class CommentTest(LiveServerTestCase):
         review_section = self.browser.find_element_by_id('id_review_section').text
         self.assertNotIn('stefanie01', review_section)
         self.assertNotIn('Comment : John is so smart. I got an A in Math because of him', review_section)
-        self.assertNotIn('Star : 5', review_section)
+        self.assertNotIn('Star : 5', review_section)'''
 
 
 class LoginTest(LiveServerTestCase):
@@ -238,7 +238,7 @@ class LoginTest(LiveServerTestCase):
         # He clicks signup button.
         signup_btn = self.browser.find_element_by_tag_name('button')
         signup_btn.click()
-        time.sleep(10)
+        time.sleep(5)
 
         # He sees message about verify account.
         message = self.browser.find_element_by_tag_name('p').text
@@ -259,8 +259,17 @@ class LoginTest(LiveServerTestCase):
         password_textbox.send_keys(Keys.ENTER)
         time.sleep(2)
 
+        # He sees his profile link.
+        jesse_link = self.browser.find_element_by_link_text('Profile : Jesse')
+        jesse_link.click()
+        time.sleep(2)
 
-class SubjectTest(LiveServerTestCase):
+        # He sees his name.
+        name = self.browser.find_element_by_id('id_fullname').text
+        self.assertEqual('Jesse Lingard', name)
+
+
+'''class SubjectTest(LiveServerTestCase):
 
     def setUp(self):
         # open Firefox.
@@ -411,7 +420,7 @@ class MatchTest(LiveServerTestCase):
         password_textbox.send_keys(Keys.ENTER)
         time.sleep(2)
 
-    def test_a_can_search_tutor(self):
+    def test_can_search_tutor(self):
         # Stefanie login "Match and Learn" website.
         self.browser.get(self.live_server_url)
         self.login('stefanie01', 'stefaniepassword')
@@ -433,7 +442,7 @@ class MatchTest(LiveServerTestCase):
 
     def test_can_accept_request(self):
         # Stefanie search math tutor and find John.
-        self.test_a_can_search_tutor()
+        self.test_can_search_tutor()
 
         # She clicks John profile link.
         john_link = self.browser.find_element_by_id('id_john01')
@@ -645,4 +654,4 @@ class ChatTest(LiveServerTestCase):
             "eric01 : I'm Eric\n",
             john_chat_left.get_attribute('value')
         )
-        time.sleep(2)
+        time.sleep(2)'''
